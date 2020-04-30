@@ -111,7 +111,7 @@ function init() {
         }
 
         return newGeometry;
-    
+	}
     };
 
     if (typeof module !== "undefined" && module.exports) {
