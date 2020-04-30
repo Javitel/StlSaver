@@ -12,8 +12,12 @@ function init() {
         constructor: THREE.STLExporter,
 
         parse: ( function () {
+		if (!mesh.isMesh) {
+            console.warn('Mesh type unsupported', mesh);
+            return;
+        }
 
- var vertex = new Vector3();
+        var vertex = new Vector3();
         var i, l = [];
         var nbVertex = 0;
         var geometry = mesh.geometry;
@@ -111,7 +115,7 @@ function init() {
         }
 
         return newGeometry;
-	}
+		}
     };
 
     if (typeof module !== "undefined" && module.exports) {
